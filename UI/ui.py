@@ -62,7 +62,7 @@ def send_message(n_clicks, user_text, history):
         r = requests.post(API_URL, json={"message": user_text}, timeout=180)
         data = r.json()
 
-        reply = data.get("reply") or f"[Ошибка: {data.get('error', "неизвестно")}]"
+        reply = data.get("reply") or f"[Ошибка: {data.get('error', 'неизвестно')}]"
     except Exception as exc:
         reply = f"[Ошибка соединения: {exc}]"
 
